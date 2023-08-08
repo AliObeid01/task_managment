@@ -15,6 +15,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 
 app.use('/auth', authRoutes);
 
+
 app.listen(process.env.PORT, (err)=>{
   if(err) throw err;
   console.log(`server running on port ${process.env.PORT}`);
