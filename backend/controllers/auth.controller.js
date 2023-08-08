@@ -35,7 +35,8 @@ const signin = async (req, res) => {
     expiresIn: '10h'
   });
 
-  res.status(200).json(token)
+  let data={user:user,token:token}
+  res.status(200).json(data)
   }
   
 module.exports = {

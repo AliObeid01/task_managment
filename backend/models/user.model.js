@@ -18,7 +18,6 @@ const users = new mongoose.Schema({
   password: {
     type: String,
     required: 'Please enter password',
-    select: false,
     trim: true,
   },
 
