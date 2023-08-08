@@ -54,6 +54,14 @@ const completeTask = async (req, res) => {
     res.json({message: "Task has been completed"});
 }
 
+const getCompletedTask = async (req, res) => {
+    const tasks = await User.findById(req.user._id).populate({
+        path: 'tasks',
+        match: { status: 1 },
+      });
+    res.json({data: tasks});
+}
+
 module.exports = {
   getUser,
   addTask,
@@ -61,5 +69,6 @@ module.exports = {
   editTask,
   getTask,
   deleteTask,
-  completeTask
+  completeTask,
+  getCompletedTask
 }
