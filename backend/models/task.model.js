@@ -10,18 +10,11 @@ const tasks = new mongoose.Schema({
   description: {
     type: String,
     required: 'Please enter description',
-    trim: true,
-    
+    trim: true,  
   },
-
-  users: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: 'User'
-  },
-
 
 })
 
-const Tasks = mongoose.model('Tasks', tasks);
+const Task = mongoose.model('Task', tasks);
 
-module.exports = Tasks;
+module.exports = Task;
