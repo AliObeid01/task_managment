@@ -19,4 +19,5 @@ const addTask = async (req, res) => {
 
 module.exports = {
   getUser,
+  addTask
 }
