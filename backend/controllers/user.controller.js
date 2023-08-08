@@ -19,7 +19,7 @@ const addTask = async (req, res) => {
 }
 
 const getTask = async (req, res) => {
-    const task_id = req.body
+    const task_id = req.body.task_id
     const task = await Task.findById(task_id);
     res.json({data: task});
 }

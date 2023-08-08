@@ -5,7 +5,7 @@ const router = Router();
 
 router.get('/user-profile', authUserMiddleware, getUser);
 router.post('/add_task', authUserMiddleware, addTask);
-router.get('/task', authUserMiddleware, getTask);
+router.post('/task', authUserMiddleware, getTask);
 router.get('/tasks', authUserMiddleware, getTasks);
 router.post('/edit_task', authUserMiddleware, editTask);
 
