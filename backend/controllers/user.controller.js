@@ -43,7 +43,7 @@ const editTask = async (req, res) => {
 
 const deleteTask = async (req, res) => {
     const task_id = req.body.task_id
-    await Task.findByIdAndDelete(task_id);
+    await Task.deleteOne(task_id);
     res.json({message: "Task has been deleted"});
 }
   
