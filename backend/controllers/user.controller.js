@@ -21,10 +21,18 @@ const addTask = async (req, res) => {
 const getTasks = async (req, res) => {
     const tasks = await User.findById(req.user._id).populate("tasks");
     res.json({data: tasks});
-  }
+}
+
+const editTask = async (req, res) => {
+    const {task_id,title,description,due_date} = req.body
+    await Task.findByIdAndUpdate(task_id, {title:title,description:description,due_date:due_date});
+    res.json({message: "Task has been edited"});
+}
+  
 
 module.exports = {
   getUser,
   addTask,
-  getTasks
+  getTasks,
+  editTask
 }
