@@ -18,6 +18,12 @@ const addTask = async (req, res) => {
     res.json({data: task});
 }
 
+const getTask = async (req, res) => {
+    const task_id = req.body
+    const task = await Task.findById(task_id);
+    res.json({data: task});
+}
+
 const getTasks = async (req, res) => {
     const tasks = await User.findById(req.user._id).populate("tasks");
     res.json({data: tasks});
@@ -34,5 +40,6 @@ module.exports = {
   getUser,
   addTask,
   getTasks,
-  editTask
+  editTask,
+  getTask
 }
