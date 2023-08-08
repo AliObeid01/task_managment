@@ -12,6 +12,9 @@ const tasks = new mongoose.Schema({
     required: 'Please enter description',
     trim: true,  
   },
+  due_date: {
+    type: String,
+  }
 
 })
 
