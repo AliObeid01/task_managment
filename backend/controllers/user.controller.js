@@ -62,6 +62,15 @@ const getCompletedTask = async (req, res) => {
     res.json({data: tasks});
 }
 
+const filterTasks = async (req, res) => {
+    const due_date = req.body.due_date
+    const tasks = await User.findById(req.user._id).populate({
+        path: 'tasks',
+        match: { due_date: due_date },
+      });
+    res.json({data: tasks});
+}
+
 module.exports = {
   getUser,
   addTask,
@@ -70,5 +79,6 @@ module.exports = {
   getTask,
   deleteTask,
   completeTask,
-  getCompletedTask
+  getCompletedTask,
+  filterTasks
 }
