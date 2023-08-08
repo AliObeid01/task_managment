@@ -9,6 +9,7 @@ const getUser = async (req, res) => {
 
 const addTask = async (req, res) => {
     const {title, description,due_date} = req.body;
+    try{
     const task = new Task();
     task.title = title;
     task.description = description;
@@ -16,6 +17,11 @@ const addTask = async (req, res) => {
     await task.save();
     await User.findByIdAndUpdate(req.user._id, {$push: {tasks: task._id}});
     res.json({data: task});
+    } catch(err) {
+        res.status(400).json({
+          message: err.message
+        });
+    }
 }
 
 const getTask = async (req, res) => {
@@ -34,6 +40,12 @@ const editTask = async (req, res) => {
     await Task.findByIdAndUpdate(task_id, {title:title,description:description,due_date:due_date});
     res.json({message: "Task has been edited"});
 }
+
+const deleteTask = async (req, res) => {
+    const task_id = req.body.task_id
+    await Task.findByIdAndDelete(task_id);
+    res.json({message: "Task has been deleted"});
+}
   
 
 module.exports = {
@@ -41,5 +53,6 @@ module.exports = {
   addTask,
   getTasks,
   editTask,
-  getTask
+  getTask,
+  deleteTask
 }
