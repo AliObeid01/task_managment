@@ -47,7 +47,12 @@ const deleteTask = async (req, res) => {
     await User.findByIdAndUpdate(req.user._id, {$pull: {tasks: task_id}});
     res.json({message: "Task has been deleted"});
 }
-  
+
+const completeTask = async (req, res) => {
+    const task_id = req.body.task_id
+    await Task.findByIdAndUpdate(task_id, {status:1});
+    res.json({message: "Task has been completed"});
+}
 
 module.exports = {
   getUser,
@@ -55,5 +60,6 @@ module.exports = {
   getTasks,
   editTask,
   getTask,
-  deleteTask
+  deleteTask,
+  completeTask
 }
