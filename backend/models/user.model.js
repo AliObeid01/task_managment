@@ -23,7 +23,7 @@ const users = new mongoose.Schema({
 
   tasks:[ {
     type: mongoose.Schema.Types.ObjectId,
-    ref: 'Tasks'
+    ref: 'Task'
   }],
 })
 
