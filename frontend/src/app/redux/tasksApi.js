@@ -19,7 +19,7 @@ export const tasksApi = createApi({
     }),
     addTask: builder.mutation({
       query: (newTask) => ({
-        url: 'tasks',
+        url: 'user/add_task',
         method: 'POST',
         body: newTask,
       }),

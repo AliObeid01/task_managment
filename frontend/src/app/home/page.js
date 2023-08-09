@@ -11,7 +11,7 @@ const HomePage = () => {
     <div>
       <h2>Task Management</h2>
       <div>
-        <Link href="/add-task">Add Task</Link>
+        <Link href="/add">Add Task</Link>
       </div>
       <div>
         <button onClick={() => setActiveTab('tasks')}>Tasks</button>
