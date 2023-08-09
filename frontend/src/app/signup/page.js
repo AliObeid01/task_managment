@@ -2,8 +2,7 @@
 import Link from 'next/link';
 import { useState } from 'react';
 import { useSignupMutation } from '../redux/authApi';
-
-
+import { useRouter } from 'next/navigation';
 
 const SignupPage = () => {
   const [name, setName] = useState('');
@@ -11,14 +10,18 @@ const SignupPage = () => {
   const [password, setPassword] = useState('');
 
   const [signup, { isError }] = useSignupMutation();
+  const router = useRouter();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     try {
-      await signup({ name, email, password });
+      const response= await signup({ name, email, password }); 
+      if(response.data){
+        router.push('/');
+      }
     } catch (error) {
-      console.error('Signup error:', error);
+      console.log('Signup error:', error);
     }
   };
 
@@ -26,7 +29,7 @@ const SignupPage = () => {
     
     <div>
       <h2>Sign Up</h2>
-      {isError && <div>An error occurred during signup.</div>}
+      {isError && <div>Email Already Exist</div>}
       <form onSubmit={handleSubmit}>
         <div>
           <label>Name:</label>
