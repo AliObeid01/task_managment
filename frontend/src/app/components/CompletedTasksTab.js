@@ -11,9 +11,6 @@ const CompletedTasksTab = () => {
       {completedTasks.map((task) => (
         <TaskItem key={task.id} task={task} />
       ))}
-      <div>
-        <Link href="/add-task">Add Task</Link>
-      </div>
     </div>
   );
 };

@@ -27,7 +27,7 @@ const TaskItem = ({ task }) => {
     <div className="task-item">
       <h3>{task.title}</h3>
       <p>{task.description}</p>
-      <p>Due: {task.dueDate}</p>
+      <p>Due: {task.due_date}</p>
       <button onClick={handleCompleteTask}>Complete</button>
       <button onClick={handleDeleteTask}>Delete</button>
       <div>

@@ -2,12 +2,19 @@ import { useGetTasksQuery } from '../redux/tasksApi';
 import TaskItem from './TaskItem';
 
 const TasksTab = () => {
-  const { data: tasks } = useGetTasksQuery();
+    const { data: tasksData, isLoading, isError } = useGetTasksQuery();
+    if (isLoading) {
+      return <div>Loading tasks...</div>;
+    }
+  
+    if (isError) {
+      return <div>Error loading tasks.</div>;
+    }
 
   return (
     <div>
-      {tasks.map((task) => (
-        <TaskItem key={task.id} task={task} />
+      {tasksData.data.tasks && tasksData.data.tasks.map((task) => (
+        <TaskItem key={task._id} task={task} />
       ))}
     </div>
   );

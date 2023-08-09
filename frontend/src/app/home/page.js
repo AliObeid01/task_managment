@@ -1,4 +1,4 @@
-"use client";
+'use client';
 import { useState } from 'react';
 import Link from 'next/link';
 import TasksTab from '../components/TasksTab';
@@ -11,13 +11,13 @@ const HomePage = () => {
     <div>
       <h2>Task Management</h2>
       <div>
-        <Link href="/tasks">Tasks</Link>
-        <Link href="/completed-tasks">Completed</Link>
-      </div>
-      {activeTab === 'tasks' ? <TasksTab /> : <CompletedTasksTab />}
-      <div>
         <Link href="/add-task">Add Task</Link>
       </div>
+      <div>
+        <button onClick={() => setActiveTab('tasks')}>Tasks</button>
+        <button onClick={() => setActiveTab('completed')}>Completed</button>
+      </div>
+      {activeTab === 'tasks' ? <TasksTab /> : <CompletedTasksTab />}
     </div>
   );
 };
