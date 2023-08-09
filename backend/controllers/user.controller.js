@@ -31,7 +31,10 @@ const getTask = async (req, res) => {
 }
 
 const getTasks = async (req, res) => {
-    const tasks = await User.findById(req.user._id).populate("tasks");
+    const tasks = await User.findById(req.user._id).populate({
+      path: 'tasks',
+      match: { status: 0 },
+    });
     res.json({data: tasks});
 }
 
