@@ -12,12 +12,11 @@ Welcome to the Task Management Web App repository! This web application helps yo
 - Create new tasks with titles, descriptions, due dates, and priorities.
 - Edit and update task details as needed.
 - Mark tasks as completed or delete them.
-- Sort and filter tasks based on different criteria.
-- User-friendly and responsive interface.
+- Sort and filter tasks based by Due Date.
 
 ## Stack
 This web app is built using the following technologies:
-- Frontend: HTML5, CSS3, JavaScript (ES6+), React.js
+- Frontend: HTML5, CSS3, JavaScript (ES6+),Next.js v13 app-directioty
 - Backend: Node.js, Express.js
 - Database: MongoDB
 
