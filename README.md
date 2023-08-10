@@ -35,4 +35,8 @@ To run the Task Management Web App locally, follow these steps:
    npm install
 4. start the frontend development server:
    ```sh
-   npm run dev   
+   npm run dev
+5. Navigate to backend folder and install dependencies:
+   ```sh
+   cd backend
+   npm install 
