@@ -39,4 +39,9 @@ To run the Task Management Web App locally, follow these steps:
 5. Navigate to backend folder and install dependencies:
    ```sh
    cd backend
-   npm install 
+   npm install
+6. Create a .env file in the backend directory and configure your server:
+   ```sh
+   PORT=''
+   DATABASE_URL=mongodb://127.0.0.1:27017/db.name
+   JWT_SECRET_KEY=''
