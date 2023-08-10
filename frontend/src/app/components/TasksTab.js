@@ -61,7 +61,7 @@ const TasksTab = () => {
 
   return (
     <div className={styles.taskItem}>
-      <div>
+      <div className={styles.inputContainer}>
         <label className={styles.label}>Filter by Due Date: </label>
         <input type="date" name="due_date" onChange={(e) => handleFilterTasks(e.target.value)} className={styles.input} />
       </div>
