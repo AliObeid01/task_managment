@@ -48,3 +48,29 @@ To run the Task Management Web App locally, follow these steps:
 7. start the backend server:
    ```sh
    node index.js
+8. Open your web browser and visit:
+   ```sh
+   http://localhost:3000  
+## Screenshots
+Here are some screenshots of the Task Management Web App:
+
+-Signin Page
+![sigin](https://github.com/AliObeid01/task_managment/assets/112481574/b9784085-8784-4fc4-aafe-38455a7f5887)
+
+-Signup Page
+![signup](https://github.com/AliObeid01/task_managment/assets/112481574/38161da9-7503-4ad2-86b5-85630f207ca2)
+
+-Add Taske Page
+![add](https://github.com/AliObeid01/task_managment/assets/112481574/05771146-843a-4a73-b268-77fda58d4c1c)
+
+-Edit Task Page
+![edit](https://github.com/AliObeid01/task_managment/assets/112481574/0ae922c7-fd4e-4d0c-9261-05684c80dcce)
+
+-List of Tasks
+![tasks](https://github.com/AliObeid01/task_managment/assets/112481574/74930987-750d-4a3d-a74b-b78c6c829dfe)
+
+-Completed Tasks
+![complete](https://github.com/AliObeid01/task_managment/assets/112481574/f1799d17-6a1a-47d5-8c72-4fc5e2069aba)
+
+-Filter Tasks
+![filter](https://github.com/AliObeid01/task_managment/assets/112481574/f7d63eff-5e2e-4799-8bdd-6129d13dd7dc)
