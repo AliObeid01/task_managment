@@ -45,3 +45,6 @@ To run the Task Management Web App locally, follow these steps:
    PORT=''
    DATABASE_URL=mongodb://127.0.0.1:27017/db.name
    JWT_SECRET_KEY=''
+7. start the backend server:
+   ```sh
+   node index.js
