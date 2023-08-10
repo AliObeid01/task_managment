@@ -7,8 +7,7 @@ import { useRouter } from 'next/navigation';
 const SigninPage = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  //const [token, setToken] = useState('');
-
+  
   const [signin, { isError }] = useSigninMutation();
   const router = useRouter();
 
@@ -17,7 +16,7 @@ const SigninPage = () => {
     try {
       const response = await signin({ email, password });
       if(response.data){
-        setToken(response.data.token)
+        localStorage.setItem('token',response.data.token)
         router.push('/home');
       }
       

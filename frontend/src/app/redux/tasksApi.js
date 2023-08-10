@@ -1,7 +1,8 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 
+const token = localStorage.getItem('token');
 const API_BASE_URL = 'http://127.0.0.1:3000';
-const ACCESS_TOKEN = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFsaW9iZWlkQGdtYWlsLmNvbSIsImlhdCI6MTY5MTY1MTMxOCwiZXhwIjoxNjkxNjg3MzE4fQ.O165d7geDGpv48s2ctwlQKaansw-DUKytqkdNsH_VeI';
+const ACCESS_TOKEN = token;
 
 export const tasksApi = createApi({
   reducerPath: 'tasksApi',

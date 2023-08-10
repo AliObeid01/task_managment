@@ -4,8 +4,6 @@ import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import { useAddTaskMutation } from '../redux/tasksApi';
 import { useRouter } from 'next/navigation';
-// import { Provider } from 'react-redux';
-// import { store } from '../redux/store';
 
 const AddTaskSchema = Yup.object().shape({
   title: Yup.string().required('Required'),

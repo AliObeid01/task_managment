@@ -2,6 +2,7 @@
 import { useState, useEffect } from 'react';
 import { useGetTaskMutation, useEditTaskMutation } from '../redux/tasksApi';
 import { useSearchParams , useRouter } from 'next/navigation';
+import Link from 'next/link';
 
 const EditTaskPage = () => {
   const router = useRouter();
@@ -57,6 +58,9 @@ const EditTaskPage = () => {
           </div>
           <button type="submit">Save</button>
         </form>
+        <div>
+        <Link href="/home">Back to Home</Link>
+      </div>
     </div>
   );
 };
