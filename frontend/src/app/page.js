@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { useState } from 'react';
 import { useSigninMutation } from './redux/authApi';
 import { useRouter } from 'next/navigation';
+import styles from './page.module.css';
 
 const SigninPage = () => {
   const [email, setEmail] = useState('');
@@ -27,22 +28,36 @@ const SigninPage = () => {
 
   return (
     
-    <div>
+    <div className={styles.container}>
       <h2>Sign In</h2>
-      {isError && <div>Invalid Credintals</div>}
-      <form onSubmit={handleSubmit}>
-        <div>
-          <label>Email:</label>
-          <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} />
+      {isError && <div className={styles.error}>Invalid Credentials</div>}
+      <form className={styles.form} onSubmit={handleSubmit}>
+        <div className={styles.inputContainer}>
+          <label className={styles.label}>Email:</label>
+          <input
+            className={styles.input}
+            type="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
         </div>
-        <div>
-          <label>Password:</label>
-          <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
+        <div className={styles.inputContainer}>
+          <label className={styles.label}>Password:</label>
+          <input
+            className={styles.input}
+            type="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          />
         </div>
-        <button type="submit">Sign In</button>
+        <button className={styles.button} type="submit">
+          Sign In
+        </button>
       </form>
       <div>
-        <Link href="/signup">Don't have an account? Sign Up</Link>
+        <Link href="/signup" className={styles.link}>
+          Don't have an account? Sign Up
+        </Link>
       </div>
     </div>
    
