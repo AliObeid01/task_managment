@@ -4,6 +4,8 @@ import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import { useAddTaskMutation } from '../redux/tasksApi';
 import { useRouter } from 'next/navigation';
+import styles from './page.module.css';
+
 
 const AddTaskSchema = Yup.object().shape({
   title: Yup.string().required('Required'),
@@ -26,35 +28,36 @@ const AddTaskPage = () => {
   };
 
   return (
-    
-    <div>
-      <h2>Add Task</h2>
-      <Formik
-        initialValues={{ title: '', description: '', due_date: '' }}
-        validationSchema={AddTaskSchema}
-        onSubmit={handleSubmit}
-      >
-        <Form>
-          <div>
-            <label>Title:</label>
-            <Field type="text" name="title" />
-            <ErrorMessage name="title" component="div" />
-          </div>
-          <div>
-            <label>Description:</label>
-            <Field as="textarea" name="description" />
-            <ErrorMessage name="title" component="div" />
-          </div>
-          <div>
-            <label>Due Date:</label>
-            <Field type="date" name="due_date" />
-            <ErrorMessage name="due_date" component="div" />
-          </div>
-          <button type="submit">Add Task</button>
-        </Form>
-      </Formik>
-      <div>
-        <Link href="/home">Back to Home</Link>
+    <div className={styles.container}>
+      <div className={styles.form}>
+        <h2 className={styles.h2}>Add Task</h2>
+        <Formik
+          initialValues={{ title: '', description: '', due_date: '' }}
+          validationSchema={AddTaskSchema}
+          onSubmit={handleSubmit}
+        >
+          <Form>
+            <div className={styles.inputContainer}>
+              <label className={styles.label}>Title:</label>
+              <Field type="text" name="title" className={styles.input} />
+              <ErrorMessage name="title" component="div" className={styles.error} />
+            </div>
+            <div className={styles.inputContainer}>
+              <label className={styles.label}>Description:</label>
+              <Field as="textarea" name="description" className={styles.input} />
+              <ErrorMessage name="description" component="div" className={styles.error} />
+            </div>
+            <div className={styles.inputContainer}>
+              <label className={styles.label}>Due Date:</label>
+              <Field type="date" name="due_date" className={styles.input} />
+              <ErrorMessage name="due_date" component="div" className={styles.error} />
+            </div>
+            <button type="submit" className={styles.button}>Add Task</button>
+          </Form>
+        </Formik>
+        <div className={styles.link}>
+          <Link href="/home" className={styles.link}>Back to Home</Link>
+        </div>
       </div>
     </div>
   );
