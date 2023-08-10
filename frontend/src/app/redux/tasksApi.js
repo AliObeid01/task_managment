@@ -51,6 +51,13 @@ export const tasksApi = createApi({
         body: editTask
       }),
     }),
+    filterTasks: builder.mutation({
+      query: (due_date) => ({
+        url: 'user/filter',
+        method: 'POST',
+        body: { due_date: due_date}
+      }),
+    }),
     getCompletedTasks: builder.mutation({
       query: () => ({
         url: 'user/completed_tasks',
@@ -59,5 +66,5 @@ export const tasksApi = createApi({
   }),
 });
 
-export const { useGetTasksMutation, useGetTaskMutation, useAddTaskMutation, useCompleteTaskMutation, useDeleteTaskMutation, useEditTaskMutation, useGetCompletedTasksMutation } =
+export const { useGetTasksMutation, useGetTaskMutation, useAddTaskMutation, useCompleteTaskMutation, useDeleteTaskMutation, useEditTaskMutation, useFilterTasksMutation, useGetCompletedTasksMutation } =
   tasksApi;
