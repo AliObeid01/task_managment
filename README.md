@@ -25,4 +25,12 @@ To run the Task Management Web App locally, follow these steps:
 
 1. Clone the repository:
    ```sh
-   git clone https://github.com/your-username/task-management-web-app.git
+   git clone https://github.com/AliObeid01/task_management.git
+2. Navigate to the project directory:
+   ```sh
+   cd task-management-web-app
+3. Navigate to frontend folder and install dependencies :
+   ```sh
+   cd frontend
+   npm install
+   
