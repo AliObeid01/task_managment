@@ -1,35 +1,3 @@
-// import { useGetTasksMutation } from '../redux/tasksApi';
-// import { useState, useEffect } from 'react';
-// import TaskItem from './TaskItem';
-
-// const TasksTab = () => {
-//   const [tasks, setTasks] = useState([]);
-//   const [getTasks] = useGetTasksMutation();
-
-//   useEffect(() => {
-//     fetchTasks();
-//   }, []);
-
-//   const fetchTasks = async () => {
-//     try {
-//       const response = await getTasks();
-//       setTasks(response.data.data.tasks);
-//     } catch (error) {
-//       console.error('Error fetching tasks:', error);
-//     }
-//   }  
-
-//   return (
-//     <div>
-//       {tasks && tasks.map((task) => (
-//         <TaskItem key={task._id} task={task} />
-//       ))}
-//     </div>
-//   );
-// };
-
-// export default TasksTab;
-
 import { useCompleteTaskMutation, useDeleteTaskMutation ,useGetTasksMutation} from '../redux/tasksApi';
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
