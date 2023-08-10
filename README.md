@@ -48,3 +48,6 @@ To run the Task Management Web App locally, follow these steps:
 7. start the backend server:
    ```sh
    node index.js
+8. Open your web browser and visit:
+   ```sh
+   http://localhost:3000  
