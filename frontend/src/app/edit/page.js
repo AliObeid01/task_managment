@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import { useGetTaskMutation, useEditTaskMutation } from '../redux/tasksApi';
 import { useSearchParams , useRouter } from 'next/navigation';
 import Link from 'next/link';
+import styles from './page.module.css';
 
 const EditTaskPage = () => {
   const router = useRouter();
@@ -41,25 +42,27 @@ const EditTaskPage = () => {
   };
 
   return (
-    <div>
-      <h2>Edit Task</h2>
+    <div className={styles.container}>
+      <div className={styles.form}>
+        <h2 className={styles.h2}>Edit Task</h2>
         <form onSubmit={handleSubmit}>
-          <div>
-            <label>Title:</label>
-            <input type="text" name="title" value={title} onChange={(e) => setTitle(e.target.value)}/>
+          <div className={styles.inputContainer}>
+            <label className={styles.label}>Title:</label>
+            <input type="text" name="title" value={title} onChange={(e) => setTitle(e.target.value)} className={styles.input} />
           </div>
-          <div>
-            <label>Description:</label>
-            <input as="textarea" name="description" value={description} onChange={(e) => setDescription(e.target.value)} />
+          <div className={styles.inputContainer}>
+            <label className={styles.label}>Description:</label>
+            <textarea type="textarea" name="description" value={description} onChange={(e) => setDescription(e.target.value)} className={styles.input} />
           </div>
-          <div>
-            <label>Due Date:</label>
-            <input type="date" name="due_date" value={due_date} onChange={(e) => setDuedate(e.target.value)} />
+          <div className={styles.inputContainer}>
+            <label className={styles.label}>Due Date:</label>
+            <input type="date" name="due_date" value={due_date} onChange={(e) => setDuedate(e.target.value)} className={styles.input} />
           </div>
-          <button type="submit">Save</button>
+          <button type="submit" className={styles.button}>Save</button>
         </form>
-        <div>
-        <Link href="/home">Back to Home</Link>
+        <div className={styles.link}>
+          <Link href="/home" className={styles.link}>Back to Home</Link>
+        </div>
       </div>
     </div>
   );
