@@ -6,14 +6,17 @@
   justify-content: center;
   min-height: 100vh;
   font-family: Arial, sans-serif;
-  background-color: #f5f5f5;
+  background-color:  #2C3E50;
 }
 
+.h2{
+  color: #F39C12;
+}
 .form {
   width: 300px;
-  padding: 20px;
+  padding: 25px;
   border-radius: 5px;
-  background-color: #ffffff;
+  background-color: #F5F5F5;
   box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1);
 }
 
@@ -28,8 +31,8 @@
 }
 
 .input {
-  width: 100%;
-  padding: 8px;
+  width: 93%;
+  padding: 10px;
   border-radius: 3px;
   border: 1px solid #ccc;
   outline: none;
@@ -38,7 +41,8 @@
 .button {
   width: 100%;
   padding: 10px;
-  background-color: #007bff;
+  margin-top: 10px;
+  background-color: #F39C12 ;
   color: #ffffff;
   border: none;
   border-radius: 3px;
@@ -47,9 +51,9 @@
 }
 
 .link {
-  color: #007bff;
+  color: #f5cb89;
   text-decoration: none;
-  margin-top: 10px;
+  padding: 15px;
 }
 
 .error {

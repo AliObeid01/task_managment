@@ -29,7 +29,7 @@ const SigninPage = () => {
   return (
     
     <div className={styles.container}>
-      <h2>Sign In</h2>
+      <h2 className={styles.h2}>Sign In</h2>
       {isError && <div className={styles.error}>Invalid Credentials</div>}
       <form className={styles.form} onSubmit={handleSubmit}>
         <div className={styles.inputContainer}>
@@ -54,7 +54,7 @@ const SigninPage = () => {
           Sign In
         </button>
       </form>
-      <div>
+      <div className={styles.link}>
         <Link href="/signup" className={styles.link}>
           Don't have an account? Sign Up
         </Link>

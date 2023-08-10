@@ -61,7 +61,9 @@ const TasksTab = () => {
   return (
     <div className="task-item">
         <div>
+          
           <input type="date" name="due_date" onChange={(e) => handleFilterTasks(e.target.value)}/>
+          <label>Filter</label>
         </div>
       {tasks && tasks.map((task) => (
       <div>

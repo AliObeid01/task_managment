@@ -29,7 +29,7 @@ const SignupPage = () => {
   return (
     
 <div className={styles.container}>
-      <h2>Sign Up</h2>
+      <h2 className={styles.h2}>Sign Up</h2>
       {isError && <div className={styles.error}>Email Already Exist</div>}
       <form className={styles.form} onSubmit={handleSubmit}>
         <div className={styles.inputContainer}>
@@ -63,7 +63,7 @@ const SignupPage = () => {
           Sign Up
         </button>
       </form>
-      <div>
+      <div className={styles.link}>
         <Link href="/" className={styles.link}>
           Already have an account? Sign In
         </Link>
