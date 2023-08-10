@@ -9,7 +9,7 @@ import { useRouter } from 'next/navigation';
 
 const AddTaskSchema = Yup.object().shape({
   title: Yup.string().required('Required'),
-  description: Yup.string(),
+  description: Yup.string().required('Required'),
   due_date: Yup.date().required('Required'),
 });
 
@@ -45,6 +45,7 @@ const AddTaskPage = () => {
           <div>
             <label>Description:</label>
             <Field as="textarea" name="description" />
+            <ErrorMessage name="title" component="div" />
           </div>
           <div>
             <label>Due Date:</label>

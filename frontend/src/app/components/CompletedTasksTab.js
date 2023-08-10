@@ -1,7 +1,6 @@
 "use client";
 import { useDeleteTaskMutation , useGetCompletedTasksMutation} from '../redux/tasksApi';
 import { useState, useEffect } from 'react';
-import Link from 'next/link';
 
 const CompletedTasksTab = () => {
   const [getCompletedTasks] = useGetCompletedTasksMutation();

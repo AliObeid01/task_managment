@@ -1,13 +1,14 @@
 import { useCompleteTaskMutation, useDeleteTaskMutation ,useGetTasksMutation} from '../redux/tasksApi';
 import { useState, useEffect } from 'react';
-import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 
 const TasksTab = () => {
+  const router = useRouter();
   const [completeTask] = useCompleteTaskMutation();
   const [deleteTask] = useDeleteTaskMutation();
   const [getTasks] = useGetTasksMutation();
 
-  const [tasks, setTasks] = useState([]);
+  const [tasks, setTasks] = useState('');
  
   useEffect(() => {
     fetchTasks();
@@ -40,6 +41,10 @@ const TasksTab = () => {
     }
   };
 
+  const handleEditTask = async (task_id) => {   
+    router.push(`/edit?task_id=${task_id}`);
+  };
+
   return (
     <div className="task-item">
       {tasks && tasks.map((task) => (
@@ -49,9 +54,7 @@ const TasksTab = () => {
         <p>Due: {task.due_date}</p>
         <button onClick={() => handleCompleteTask(task._id)}>Complete</button>
         <button onClick={() => handleDeleteTask(task._id)}>Delete</button>
-        <div>
-          <Link href={`/edit-task/${task._id}`}>Edit</Link>
-        </div>
+        <button onClick={() => handleEditTask(task._id)}>Edit</button>
         </div>
       ))}
     </div>
