@@ -46,15 +46,13 @@ const editTask = async (req, res) => {
 
 const deleteTask = async (req, res) => {
     const {task_id} = req.body
-    console.log(task_id)
     await Task.deleteOne({ _id: task_id });
     await User.findByIdAndUpdate(req.user._id, {$pull: {tasks: task_id}});
     res.json({message: "Task has been deleted"});
 }
 
 const completeTask = async (req, res) => {
-    const task_id = req.body.task_id
-    console.log(task_id)
+    const {task_id} = req.body
     await Task.findByIdAndUpdate(task_id, {status:1});
     res.json({message: "Task has been completed"});
 }
