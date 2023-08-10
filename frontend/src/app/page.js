@@ -7,7 +7,7 @@ import { useRouter } from 'next/navigation';
 const SigninPage = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [token, setToken] = useState('');
+  //const [token, setToken] = useState('');
 
   const [signin, { isError }] = useSigninMutation();
   const router = useRouter();

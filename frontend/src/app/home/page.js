@@ -3,11 +3,14 @@ import { useState } from 'react';
 import Link from 'next/link';
 import TasksTab from '../components/TasksTab';
 import CompletedTasksTab from '../components/CompletedTasksTab';
+import { Provider } from 'react-redux';
+import { store } from '../redux/store';
 
 const HomePage = () => {
   const [activeTab, setActiveTab] = useState('tasks');
 
   return (
+    <Provider store={store}>
     <div>
       <h2>Task Management</h2>
       <div>
@@ -19,6 +22,7 @@ const HomePage = () => {
       </div>
       {activeTab === 'tasks' ? <TasksTab /> : <CompletedTasksTab />}
     </div>
+    </Provider>
   );
 };
 

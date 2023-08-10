@@ -1,4 +1,4 @@
-import Link from 'next/link';
+"use client";
 import { useSelector } from 'react-redux';
 import { selectCompletedTasks } from '../redux/tasksSlice';
 import TaskItem from './TaskItem';
@@ -9,7 +9,7 @@ const CompletedTasksTab = () => {
   return (
     <div>
       {completedTasks.map((task) => (
-        <TaskItem key={task.id} task={task} />
+        <TaskItem key={task._id} task={task} />
       ))}
     </div>
   );
