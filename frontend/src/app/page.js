@@ -14,7 +14,6 @@ const SigninPage = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
     try {
       const response = await signin({ email, password });
       if(response.data){

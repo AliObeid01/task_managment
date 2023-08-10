@@ -4,8 +4,8 @@ import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import { useAddTaskMutation } from '../redux/tasksApi';
 import { useRouter } from 'next/navigation';
-import { Provider } from 'react-redux';
-import { store } from '../redux/store';
+// import { Provider } from 'react-redux';
+// import { store } from '../redux/store';
 
 const AddTaskSchema = Yup.object().shape({
   title: Yup.string().required('Required'),
@@ -28,7 +28,7 @@ const AddTaskPage = () => {
   };
 
   return (
-    <Provider store={store}>
+    
     <div>
       <h2>Add Task</h2>
       <Formik
@@ -58,7 +58,6 @@ const AddTaskPage = () => {
         <Link href="/home">Back to Home</Link>
       </div>
     </div>
-    </Provider>
   );
 };
 

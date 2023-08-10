@@ -1,7 +1,7 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 
 const API_BASE_URL = 'http://127.0.0.1:3000';
-const ACCESS_TOKEN = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFsaW9iZWlkQGdtYWlsLmNvbSIsImlhdCI6MTY5MTYwOTE0NywiZXhwIjoxNjkxNjQ1MTQ3fQ.d4YRGGH8_XMeS10bKDQkG7h2iIuaQIKmR4XaunOjEZM';
+const ACCESS_TOKEN = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFsaW9iZWlkQGdtYWlsLmNvbSIsImlhdCI6MTY5MTY1MTMxOCwiZXhwIjoxNjkxNjg3MzE4fQ.O165d7geDGpv48s2ctwlQKaansw-DUKytqkdNsH_VeI';
 
 export const tasksApi = createApi({
   reducerPath: 'tasksApi',
@@ -13,7 +13,7 @@ export const tasksApi = createApi({
     },
   }),
   endpoints: (builder) => ({
-    getTasks: builder.query({
+    getTasks: builder.mutation({
         query: () => 'user/tasks',
     }),
     addTask: builder.mutation({
@@ -40,5 +40,5 @@ export const tasksApi = createApi({
   }),
 });
 
-export const { useGetTasksQuery, useAddTaskMutation, useCompleteTaskMutation, useDeleteTaskMutation } =
+export const { useGetTasksMutation, useAddTaskMutation, useCompleteTaskMutation, useDeleteTaskMutation } =
   tasksApi;
