@@ -11,7 +11,10 @@ const TasksTab = () => {
   const [filterTasks] = useFilterTasksMutation();
 
   const [tasks, setTasks] = useState('');
- 
+
+  const [currentPage, setCurrentPage] = useState(1);
+  const tasksPerPage = 5;
+
   useEffect(() => {
     fetchTasks();
   }, []);
@@ -59,6 +62,10 @@ const TasksTab = () => {
     router.push(`/edit?task_id=${task_id}`);
   };
 
+  const indexOfLastTask = currentPage * tasksPerPage;
+  const indexOfFirstTask = indexOfLastTask - tasksPerPage;
+  const currentTasks = tasks.slice(indexOfFirstTask, indexOfLastTask);
+
   return (
     <div className={styles.taskItem}>
       <div className={styles.inputContainer}>
@@ -66,7 +73,7 @@ const TasksTab = () => {
         <input type="date" name="due_date" onChange={(e) => handleFilterTasks(e.target.value)} className={styles.input} />
       </div>
       {tasks &&
-        tasks.map((task) => (
+        currentTasks.map((task) => (
           <div key={task._id} className={styles.task}>
             <div className={styles.taskHeader}>
               <div className={styles.taskInfo}>
@@ -88,6 +95,20 @@ const TasksTab = () => {
             </div>
           </div>
         ))}
+        <div className={styles.pagination}>
+        <button
+          onClick={() => setCurrentPage(currentPage - 1)}
+          disabled={currentPage === 1}
+        >
+          Previous
+        </button>
+        <button
+          onClick={() => setCurrentPage(currentPage + 1)}
+          disabled={indexOfLastTask >= tasks.length}
+        >
+          Next
+        </button>
+      </div>
     </div>
   );
 };
