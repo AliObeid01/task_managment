@@ -55,22 +55,22 @@ To run the Task Management Web App locally, follow these steps:
 Here are some screenshots of the Task Management Web App:
 
 -Signin Page
-![sigin](https://github.com/AliObeid01/task_managment/assets/112481574/b9784085-8784-4fc4-aafe-38455a7f5887)
+![sigin](https://github.com/AliObeid01/task_managment/assets/112481574/b33ae95b-e199-45d5-ad0d-5f6b63b811f3)
 
 -Signup Page
-![signup](https://github.com/AliObeid01/task_managment/assets/112481574/38161da9-7503-4ad2-86b5-85630f207ca2)
+![signup](https://github.com/AliObeid01/task_managment/assets/112481574/789c6eff-fb0d-4bcf-80b1-6e0833c90115)
 
 -Add Taske Page
-![add](https://github.com/AliObeid01/task_managment/assets/112481574/05771146-843a-4a73-b268-77fda58d4c1c)
+![add](https://github.com/AliObeid01/task_managment/assets/112481574/22a6105e-cb85-4e4f-a4f2-bd99284af333)
 
 -Edit Task Page
-![edit](https://github.com/AliObeid01/task_managment/assets/112481574/0ae922c7-fd4e-4d0c-9261-05684c80dcce)
+![edit](https://github.com/AliObeid01/task_managment/assets/112481574/97f72d2d-7ebb-4549-89f7-13f350128362)
 
--List of Tasks
-![tasks](https://github.com/AliObeid01/task_managment/assets/112481574/74930987-750d-4a3d-a74b-b78c6c829dfe)
+-List of Tasks with pagination
+![pagination](https://github.com/AliObeid01/task_managment/assets/112481574/53e793eb-5345-45b5-9706-a3ffdf5b4908)
 
 -Completed Tasks
-![complete](https://github.com/AliObeid01/task_managment/assets/112481574/f1799d17-6a1a-47d5-8c72-4fc5e2069aba)
+![complete](https://github.com/AliObeid01/task_managment/assets/112481574/6383a63c-c397-41ec-955a-d454a3563163)
 
 -Filter Tasks
-![filter](https://github.com/AliObeid01/task_managment/assets/112481574/f7d63eff-5e2e-4799-8bdd-6129d13dd7dc)
+![filter](https://github.com/AliObeid01/task_managment/assets/112481574/a07b641c-9db8-4f3e-84e4-29cd79d2bfee)
